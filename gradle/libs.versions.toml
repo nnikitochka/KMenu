@@ -1,0 +1,20 @@
+metadata.format.version = "1.1"
+
+[versions]
+
+kotlin = "2.2.10"
+annotations = "26.0.2"
+detekt = "1.23.8"
+shadow = "9.0.0-rc2"
+paper = "1.21.8-R0.1-SNAPSHOT"
+
+[libraries]
+
+annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
+paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+kotlinStdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+
+# Plugins
+plugin-kotlin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+plugin-detekt = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+plugin-shadow = { group = "com.gradleup.shadow", name = "com.gradleup.shadow.gradle.plugin", version.ref = "shadow" }
