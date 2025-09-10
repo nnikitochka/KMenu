@@ -1,0 +1,7 @@
+name: KMenu # TODO Name of plugin from project
+version: '1.0' # TODO Version from project
+main: kmenu.KMenuPaper
+description: Universal library for creation kotlin script-based menu for Minecraft servers. # TODO Desc from project
+api-version: '1.21'
+bootstrapper: kmenu.KMenuBootstrap
+loader: kmenu.KMenuLoader
