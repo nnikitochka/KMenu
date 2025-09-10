@@ -14,8 +14,11 @@ val startUpFlags = listOf("-Xmx2G", "-Xms1G")
 val startUpArgs = listOf("--nogui")
 
 dependencies {
-    api(projects.kmenuCommon)
+    // We exclude kotlin because use compileOnly(libs.kotlinStdlib) lower
+    api(projects.kmenuCommon, { exclude("org.jetbrains.kotlin") })
+
     compileOnly(libs.paper)
+    compileOnly(libs.kotlinStdlib) // We shouldn't shadow kotlin, paper download it automatically
 }
 
 tasks.withType<ShadowJar> { archiveFileName.set("kmenu.jar") }
@@ -71,7 +74,6 @@ tasks.register<JavaExec>("runServer") {
     workingDir = file(serverDirectory)
 
     jvmArgs = startUpFlags
-
     args = startUpArgs
 
     standardInput = System.`in`
